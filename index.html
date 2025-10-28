@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador HITECH NET</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rastreador HITECH NET</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#abastecimentos">Abastecimentos</a></li>
+                <li><a href="#agendamentos">Agendamentos</a></li>
+                <li><a href="#veiculos">Veículos</a></li>
+                <li><a href="#motoristas">Motoristas</a></li>
+                <li><a href="#postos">Postos</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Rastreadores Veiculares</h1>
+        <p>Monitore seus veículos em tempo real.</p>
+        <div id="map"></div>
+    </section>
+
+    <section id="abastecimentos" class="feature">
+        <h2>Abastecimentos</h2>
+        <p>Registre abastecimentos e calcule Km/L.</p>
+    </section>
+
+    <section id="agendamentos" class="feature">
+        <h2>Agendamentos</h2>
+        <p>Agende trocas de óleo e manutenções.</p>
+    </section>
+
+    <section id="veiculos" class="feature">
+        <h2>Veículos</h2>
+        <p>Cadastre e gerencie sua frota.</p>
+    </section>
+
+    <section id="motoristas" class="feature">
+        <h2>Motoristas</h2>
+        <p>Cadastre motoristas e associe a veículos.</p>
+    </section>
+
+    <section id="postos" class="feature">
+        <h2>Postos</h2>
+        <p>Cadastre postos favoritos.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rastreador HITECH NET. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

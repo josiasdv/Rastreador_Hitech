@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #000; /* Fundo preto */
+    color: #fff; /* Letras brancas */
+    line-height: 1.6;
+}
+
+/* Contêiner de Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+}
+
+/* Seção de Login */
+.login-section {
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.login-section:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logotipo (login) */
+.login-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.login-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-section input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #222;
+    color: #fff;
+}
+
+.login-section input::placeholder {
+    color: #aaa;
+}
+
+.login-section button {
+    background: #1a73e8;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.login-section button:hover {
+    background: #1557b0;
+}
+
+.login-section p {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.login-section a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
+}
+
+/* Cabeçalho - Menu Principal com Animação */
+header {
+    background: #111; /* Cinza escuro para contraste */
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Menu Principal - Animação */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #fff; /* Cor padrão (branco) */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px; /* Espaçamento interno */
+    animation: fadeInMenu 0.7s ease-in-out; /* Animação de fade-in ao carregar */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.nav-links a:hover {
+    color: #ff0000; /* Muda para vermelho no hover */
+    transform: scale(1.1); /* Zoom leve ao passar o mouse */
+}
+
+/* Animação de fade-in para o menu */
+@keyframes fadeInMenu {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px); /* Começa um pouco acima */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Volta à posição normal */
+    }
+}
+
+/* Seções */
+.section {
+    display: none; /* Oculta por padrão */
+    padding: 50px 20px;
+    text-align: center;
+    background: #000; /* Fundo preto */
+    color: #fff;
+}
+
+/* Seção ativa (aberta) */
+.section.active {
+    display: block;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* Mapa */
+.map-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #000;
+}
+
+#map {
+    height: 500px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #555; /* Borda para contraste */
+}
+
+/* Formulários */
+form {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #222;
+    color: #fff;
+}
+
+form input::placeholder,
+form select option {
+    color: #aaa;
+}
+
+form button {
+    background: #ff0000; /* Vermelho principal */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #cc0000; /* Vermelho escuro no hover */
+}
+
+/* Tabelas */
+table {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #555;
+    text-align: left;
+}
+
+table th {
+    background: #1a73e8;
+    color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background: #111;
+}
+
+table tbody tr:hover {
+    background: #222;
+}
+
+/* Resumo do Relatório */
+#resumo-relatorio {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* Gráfico */
+canvas {
+    max-width: 100%;
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Rodapé */
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin-left: 15px;
+    }
+
+    .login-section {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .login-logo {
+        max-width: 120px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+}
