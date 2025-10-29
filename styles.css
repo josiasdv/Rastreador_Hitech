@@ -4,15 +4,13 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
 body {
-    background: url('imagens/fundo login.jpg'); 
+    background: url('imagens/fundo login.jpg');
     background-size: cover;
     background-position: center;
     color: #fff; /* Letras brancas */
     line-height: 1.6;
 }
-
 /* Contêiner de Login */
 .login-container {
     display: flex;
@@ -21,9 +19,8 @@ body {
     min-height: 100vh;
     width: 100%;
     background: transparent;
-  
+ 
 }
-
 /* Seção de Login */
 .login-section {
     max-width: 400px;
@@ -36,11 +33,9 @@ body {
     animation: fadeIn 0.5s ease-in-out;
     transition: transform 0.3s ease;
 }
-
 .login-section:hover {
     transform: scale(1.02);
 }
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -51,7 +46,6 @@ body {
         transform: translateY(0);
     }
 }
-
 /* Logotipo (login) */
 .login-logo {
     max-width: 200px;
@@ -60,19 +54,16 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .login-section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #fff;
 }
-
 .login-section form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .login-section input {
     padding: 10px;
     border: 1px solid #555;
@@ -81,11 +72,9 @@ body {
     background: #222;
     color: #fff;
 }
-
 .login-section input::placeholder {
     color: #aaa;
 }
-
 .login-section button {
     background: #1a73e8;
     color: #fff;
@@ -96,25 +85,20 @@ body {
     font-weight: bold;
     transition: background 0.3s ease;
 }
-
 .login-section button:hover {
     background: #1557b0;
 }
-
 .login-section p {
     margin-top: 10px;
     color: #fff;
 }
-
 .login-section a {
     color: #1a73e8;
     text-decoration: none;
 }
-
 .login-section a:hover {
     text-decoration: underline;
 }
-
 /* Cabeçalho - Menu Principal com Animação */
 header {
     background: transparent; /* Cinza escuro para contraste */
@@ -124,7 +108,6 @@ header {
     top: 0;
     z-index: 100;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -133,24 +116,20 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
-
 /* Menu Principal - Animação */
 .nav-links {
     display: flex;
     list-style: none;
     align-items: center;
 }
-
 .nav-links li {
     margin-left: 25px;
 }
-
 .nav-links a {
     color: #fff; /* Cor padrão (branco) */
     text-decoration: none;
@@ -159,12 +138,10 @@ nav {
     animation: fadeInMenu 0.7s ease-in-out; /* Animação de fade-in ao carregar */
     transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
 }
-
 .nav-links a:hover {
     color: #ff0000; /* Muda para vermelho no hover */
     transform: scale(1.1); /* Zoom leve ao passar o mouse */
 }
-
 /* Animação de fade-in para o menu */
 @keyframes fadeInMenu {
     0% {
@@ -176,7 +153,6 @@ nav {
         transform: translateY(0); /* Volta à posição normal */
     }
 }
-
 /* Seções */
 .section {
     display: none; /* Oculta por padrão */
@@ -185,34 +161,87 @@ nav {
     background: #000; /* Fundo preto */
     color: #fff;
 }
-
 /* Seção ativa (aberta) */
 .section.active {
     display: block;
 }
-
 .section h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #fff;
 }
-
 /* Mapa */
 .map-section {
-    padding: 100px 70px;
+    padding: 50px 0; /* Ajustado para menos padding vertical em telas menores */
     text-align: center;
     background: transparent;
 }
-
 #map {
     background: transparent;
     height: 500px;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     border-radius: 8px;
-    border: 1px solid #555; /* Borda para contraste */
+    border: 1px solid #555;
+    position: relative; /* Para posicionamento do iframe */
+}
+#map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
+/* Wrapper para Tabelas Responsivas */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    .section {
+        padding: 30px 10px; /* Reduz padding em mobiles */
+    }
+    nav {
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    #map {
+        height: 300px; /* Reduz altura do mapa em telas pequenas */
+    }
+    form {
+        gap: 8px; /* Menos espaço em forms */
+    }
+    table {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .section {
+        padding: 40px 15px;
+    }
+    #map {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1201px) {
+    #map {
+        height: 600px; /* Aumenta em telas grandes */
+    }
+}
 /* Formulários */
 form {
     max-width: 600px;
@@ -221,7 +250,6 @@ form {
     flex-direction: column;
     gap: 10px;
 }
-
 form input,
 form select,
 form textarea {
@@ -232,12 +260,10 @@ form textarea {
     background: #222;
     color: #fff;
 }
-
 form input::placeholder,
 form select option {
     color: #aaa;
 }
-
 form button {
     background: #ff0000; /* Vermelho principal */
     color: #fff;
@@ -248,11 +274,9 @@ form button {
     font-weight: bold;
     transition: background 0.3s ease;
 }
-
 form button:hover {
     background: #cc0000; /* Vermelho escuro no hover */
 }
-
 /* Tabelas */
 table {
     max-width: 1200px;
@@ -260,34 +284,28 @@ table {
     border-collapse: collapse;
     color: #fff;
 }
-
 table th,
 table td {
     padding: 10px;
     border: 1px solid #555;
     text-align: left;
 }
-
 table th {
     background: #1a73e8;
     color: #fff;
 }
-
 table tbody tr:nth-child(even) {
     background: #111;
 }
-
 table tbody tr:hover {
     background: #222;
 }
-
 /* Resumo do Relatório */
 #resumo-relatorio {
     margin-top: 20px;
     font-size: 1.1rem;
     color: #fff;
 }
-
 /* Gráfico */
 canvas {
     max-width: 100%;
@@ -295,7 +313,6 @@ canvas {
     padding: 10px;
     border-radius: 8px;
 }
-
 /* Rodapé */
 footer {
     background: #111;
@@ -303,31 +320,25 @@ footer {
     text-align: center;
     padding: 20px;
 }
-
 /* Responsividade */
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: row;
         justify-content: center;
     }
-
     .nav-links li {
         margin-left: 15px;
     }
-
     .login-section {
         padding: 15px;
         width: 95%;
     }
-
     .login-logo {
         max-width: 120px;
     }
-
     table {
         font-size: 0.9rem;
     }
-
     table th, table td {
         padding: 8px;
     }
