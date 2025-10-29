@@ -41,6 +41,7 @@ abastecimentoForm.addEventListener('submit', (e) => {
     const litros = document.getElementById('litros').value;
     const odometro = document.getElementById('odometro').value;
     const custo = document.getElementById('custo').value;
+    const data = new Date.getElementById()
     dados.abastecimentos.push({ placa, litros, odometro, custo });
     salvarDados();
     atualizarTabelaAbastecimentos();
