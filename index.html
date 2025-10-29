@@ -9,7 +9,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </head>
 <body>
-   
+  
     <header>
         <nav>
             <div class="logo">Rastreador HITECH NET</div>
@@ -44,6 +44,8 @@
             <input type="number" id="litros" placeholder="Litros Abastecidos" step="0.01" required>
             <input type="number" id="odometro" placeholder="Odômetro (km)" required>
             <input type="number" id="custo" placeholder="Custo (R$)" step="0.01" required>
+            <input type="date" id="data-abastecimento" required> 
+            <input type="time" id="hora-abastecimento" required> 
             <button type="submit">Registrar Abastecimento</button>
         </form>
         <div class="table-container"> 
@@ -54,6 +56,7 @@
                         <th>Litros</th>
                         <th>Odômetro (km)</th>
                         <th>Custo (R$)</th>
+                        <th>Data/Hora</th> 
                         <th>Km/L</th>
                     </tr>
                 </thead>
@@ -68,6 +71,7 @@
         <form id="agendamento-form">
             <input type="text" id="veiculo-agendamento" placeholder="Placa do Veículo" required>
             <input type="date" id="data-agendamento" required>
+            <input type="time" id="hora-agendamento" required> 
             <button type="submit">Agendar</button>
         </form>
         <div class="table-container"> 
@@ -75,7 +79,7 @@
                 <thead>
                     <tr>
                         <th>Placa</th>
-                        <th>Data</th>
+                        <th>Data/Hora</th> 
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -162,9 +166,10 @@
             <input type="number" id="valor-pecas" placeholder="Valor Total das Peças (R$)" step="0.01" required>
             <input type="number" id="mao-de-obra" placeholder="Preço da Mão de Obra (R$)" step="0.01" required>
             <input type="date" id="data-manutencao" required>
+            <input type="time" id="hora-manutencao" required> 
             <button type="submit">Registrar Manutenção</button>
         </form>
-        <div class="table-container"> 
+        <div class="table-container"> >
             <table id="tabela-manutencoes">
                 <thead>
                     <tr>
@@ -175,7 +180,7 @@
                         <th>Valor Peças</th>
                         <th>Mão de Obra</th>
                         <th>Total</th>
-                        <th>Data</th>
+                        <th>Data/Hora</th> 
                     </tr>
                 </thead>
                 <tbody></tbody>
