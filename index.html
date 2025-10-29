@@ -6,9 +6,10 @@
     <title>Rastreador HITECH NET</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </head>
 <body>
+    
     <header>
         <nav>
             <div class="logo">Rastreador HITECH NET</div>
@@ -19,40 +20,161 @@
                 <li><a href="#veiculos">Veículos</a></li>
                 <li><a href="#motoristas">Motoristas</a></li>
                 <li><a href="#postos">Postos</a></li>
+                <li><a href="#manutencoes">Manutenções</a></li>
                 <li><a href="#" id="logout">Sair</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <h1>Rastreadores Veiculares</h1>
-        <p>Monitore seus veículos em tempo real.</p>
-        <div id="map"></div>
+    <!-- INÍCIO -->
+    <section id="inicio" class="section active">
+        <h2>Bem-vindo ao Rastreador HITECH NET</h2>
+        <p>Gerencie seus veículos, abastecimentos, manutenções e agendamentos em tempo real.</p>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.5582563360067!2d-52.69756272592273!3d-16.492484140529786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9364d4ae490e546d%3A0x89f0a9434b7d0913!2sHi-Tech%20NET!5e1!3m2!1spt-BR!2sbr!4v1761741284847!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
     </section>
 
-    <section id="abastecimentos" class="feature">
+    <!-- ABASTECIMENTOS -->
+    <section id="abastecimentos" class="section">
         <h2>Abastecimentos</h2>
         <p>Registre abastecimentos e calcule Km/L.</p>
+        <form id="abastecimento-form">
+            <input type="text" id="placa" placeholder="Placa do Veículo" required>
+            <input type="number" id="litros" placeholder="Litros Abastecidos" step="0.01" required>
+            <input type="number" id="odometro" placeholder="Odômetro (km)" required>
+            <input type="number" id="custo" placeholder="Custo (R$)" step="0.01" required>
+            <button type="submit">Registrar Abastecimento</button>
+        </form>
+        <table id="tabela-abastecimentos">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Litros</th>
+                    <th>Odômetro (km)</th>
+                    <th>Custo (R$)</th>
+                    <th>Km/L</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section id="agendamentos" class="feature">
-        <h2>Agendamentos</h2>
+    <!-- AGENDAMENTOS -->
+    <section id="agendamentos" class="section">
+        <h2>Agendamentos de Troca de Óleo</h2>
         <p>Agende trocas de óleo e manutenções.</p>
+        <form id="agendamento-form">
+            <input type="text" id="veiculo-agendamento" placeholder="Placa do Veículo" required>
+            <input type="date" id="data-agendamento" required>
+            <button type="submit">Agendar</button>
+        </form>
+        <table id="tabela-agendamentos">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section id="veiculos" class="feature">
-        <h2>Veículos</h2>
+    <!-- VEÍCULOS -->
+    <section id="veiculos" class="section">
+        <h2>Cadastro de Veículos</h2>
         <p>Cadastre e gerencie sua frota.</p>
+        <form id="veiculo-form">
+            <input type="text" id="placa" placeholder="Placa" required>
+            <input type="text" id="modelo" placeholder="Modelo" required>
+            <input type="text" id="proprietario" placeholder="Proprietário" required>
+            <button type="submit">Cadastrar Veículo</button>
+        </form>
+        <table id="tabela-veiculos">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Proprietário</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section id="motoristas" class="feature">
-        <h2>Motoristas</h2>
+    <!-- MOTORISTAS -->
+    <section id="motoristas" class="section">
+        <h2>Cadastro de Motoristas</h2>
         <p>Cadastre motoristas e associe a veículos.</p>
+        <form id="motorista-form">
+            <input type="text" id="nome-motorista" placeholder="Nome" required>
+            <input type="text" id="cnh" placeholder="CNH" required>
+            <input type="text" id="contato-motorista" placeholder="Contato (Telefone)" required>
+            <button type="submit">Cadastrar Motorista</button>
+        </form>
+        <table id="tabela-motoristas">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CNH</th>
+                    <th>Contato</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section id="postos" class="feature">
-        <h2>Postos</h2>
+    <!-- POSTOS -->
+    <section id="postos" class="section">
+        <h2>Cadastro de Postos de Gasolina</h2>
         <p>Cadastre postos favoritos.</p>
+        <form id="posto-form">
+            <input type="text" id="nome-posto" placeholder="Nome do Posto" required>
+            <input type="text" id="endereco-posto" placeholder="Endereço" required>
+            <button type="submit">Cadastrar Posto</button>
+        </form>
+        <table id="tabela-postos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- MANUTENÇÕES -->
+    <section id="manutencoes" class="section">
+        <h2>Manutenções</h2>
+        <p>Cadastre manutenções com oficina, peças e mão de obra.</p>
+        <form id="manutencao-form">
+            <input type="text" id="veiculo-manutencao" placeholder="Placa do Veículo" required>
+            <input type="text" id="oficina" placeholder="Nome da Oficina" required>
+            <input type="text" id="cnpj-oficina" placeholder="CNPJ da Oficina" required>
+            <input type="text" id="pecas" placeholder="Peças (separadas por vírgula)" required>
+            <input type="number" id="valor-pecas" placeholder="Valor Total das Peças (R$)" step="0.01" required>
+            <input type="number" id="mao-de-obra" placeholder="Preço da Mão de Obra (R$)" step="0.01" required>
+            <input type="date" id="data-manutencao" required>
+            <button type="submit">Registrar Manutenção</button>
+        </form>
+        <table id="tabela-manutencoes">
+            <thead>
+                <tr>
+                    <th>Veículo</th>
+                    <th>Oficina</th>
+                    <th>CNPJ</th>
+                    <th>Peças</th>
+                    <th>Valor Peças</th>
+                    <th>Mão de Obra</th>
+                    <th>Total</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
     <footer>
