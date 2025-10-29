@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="https://unpkg.com/docx@9.0.1/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
   
@@ -49,6 +51,11 @@
             <button type="submit">Registrar Abastecimento</button>
         </form>
         <div class="table-container"> 
+            <div class="export-buttons">
+              <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
+              <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
+              <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
+            </div>
             <table id="tabela-abastecimentos">
                 <thead>
                     <tr>
@@ -169,6 +176,11 @@
             <input type="time" id="hora-manutencao" required> 
             <button type="submit">Registrar Manutenção</button>
         </form>
+        <div class="export-buttons">
+          <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
+          <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
+          <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
+        </div>
         <div class="table-container"> >
             <table id="tabela-manutencoes">
                 <thead>
