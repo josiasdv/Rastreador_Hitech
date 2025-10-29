@@ -27,7 +27,8 @@ let dados = localStorage.getItem('dados') ? JSON.parse(localStorage.getItem('dad
     agendamentos: [],
     veiculos: [],
     motoristas: [],
-    postos: []
+    postos: [],
+    manutencoes: [] 
 };
 // Salvar dados
 function salvarDados() {
@@ -41,8 +42,9 @@ abastecimentoForm.addEventListener('submit', (e) => {
     const litros = document.getElementById('litros').value;
     const odometro = document.getElementById('odometro').value;
     const custo = document.getElementById('custo').value;
-    const data = new Date.getElementById()
-    dados.abastecimentos.push({ placa, litros, odometro, custo });
+    const data = document.getElementById('data-abastecimento').value; 
+    const hora = document.getElementById('hora-abastecimento').value; 
+    dados.abastecimentos.push({ placa, litros, odometro, custo, data, hora });
     salvarDados();
     atualizarTabelaAbastecimentos();
     e.target.reset();
@@ -56,7 +58,8 @@ function atualizarTabelaAbastecimentos() {
         row.insertCell().innerText = a.litros;
         row.insertCell().innerText = a.odometro;
         row.insertCell().innerText = a.custo;
-        row.insertCell().innerText = 'Km/L calculado'; // Adicione lógica de Km/L se necessário
+        row.insertCell().innerText = a.data ? `${a.data} ${a.hora || ''}` : ''; 
+        row.insertCell().innerText = 'Km/L calculado'; 
     });
 }
 // === AGENDAMENTOS ===
@@ -65,7 +68,8 @@ agendamentoForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const veiculo = document.getElementById('veiculo-agendamento').value;
     const data = document.getElementById('data-agendamento').value;
-    dados.agendamentos.push({ veiculo, data });
+    const hora = document.getElementById('hora-agendamento').value; 
+    dados.agendamentos.push({ veiculo, data, hora });
     salvarDados();
     atualizarTabelaAgendamentos();
     e.target.reset();
@@ -76,7 +80,7 @@ function atualizarTabelaAgendamentos() {
     dados.agendamentos.forEach(a => {
         const row = tabela.insertRow();
         row.insertCell().innerText = a.veiculo;
-        row.insertCell().innerText = a.data;
+        row.insertCell().innerText = `${a.data} ${a.hora || ''}`; 
         row.insertCell().innerText = 'Status';
     });
 }
@@ -144,12 +148,46 @@ function atualizarTabelaPostos() {
         row.insertCell().innerText = p.endereco;
     });
 }
+// === MANUTENÇÕES === 
+const manutencaoForm = document.getElementById('manutencao-form');
+manutencaoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const veiculo = document.getElementById('veiculo-manutencao').value;
+    const oficina = document.getElementById('oficina').value;
+    const cnpj = document.getElementById('cnpj-oficina').value;
+    const pecas = document.getElementById('pecas').value;
+    const valorPecas = document.getElementById('valor-pecas').value;
+    const maoDeObra = document.getElementById('mao-de-obra').value;
+    const data = document.getElementById('data-manutencao').value;
+    const hora = document.getElementById('hora-manutencao').value; 
+    const total = parseFloat(valorPecas) + parseFloat(maoDeObra);
+    dados.manutencoes.push({ veiculo, oficina, cnpj, pecas, valorPecas, maoDeObra, total, data, hora });
+    salvarDados();
+    atualizarTabelaManutencoes();
+    e.target.reset();
+});
+function atualizarTabelaManutencoes() {
+    const tabela = document.getElementById('tabela-manutencoes').getElementsByTagName('tbody')[0];
+    tabela.innerHTML = '';
+    dados.manutencoes.forEach(m => {
+        const row = tabela.insertRow();
+        row.insertCell().innerText = m.veiculo;
+        row.insertCell().innerText = m.oficina;
+        row.insertCell().innerText = m.cnpj;
+        row.insertCell().innerText = m.pecas;
+        row.insertCell().innerText = m.valorPecas;
+        row.insertCell().innerText = m.maoDeObra;
+        row.insertCell().innerText = m.total;
+        row.insertCell().innerText = `${m.data} ${m.hora || ''}`; 
+    });
+}
 // Inicializa tabelas
 atualizarTabelaAbastecimentos();
 atualizarTabelaAgendamentos();
 atualizarTabelaVeiculos();
 atualizarTabelaMotoristas();
 atualizarTabelaPostos();
+atualizarTabelaManutencoes(); 
 // Init Maps
 function initMap() {
     new google.maps.Map(document.getElementById('map'), {
