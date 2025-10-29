@@ -6,7 +6,9 @@
 }
 
 body {
-    background: #000; /* Fundo preto */
+    background: url('imagens/fundo login.jpg'); 
+    background-size: cover;
+    background-position: center;
     color: #fff; /* Letras brancas */
     line-height: 1.6;
 }
@@ -18,7 +20,8 @@ body {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: #000;
+    background: transparent;
+  
 }
 
 /* Seção de Login */
@@ -51,8 +54,8 @@ body {
 
 /* Logotipo (login) */
 .login-logo {
-    max-width: 150px;
-    margin-bottom: 20px;
+    max-width: 200px;
+    margin-bottom: 45px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -114,7 +117,7 @@ body {
 
 /* Cabeçalho - Menu Principal com Animação */
 header {
-    background: #111; /* Cinza escuro para contraste */
+    background: transparent; /* Cinza escuro para contraste */
     color: #fff;
     padding: 1rem 0;
     position: sticky;
@@ -196,12 +199,13 @@ nav {
 
 /* Mapa */
 .map-section {
-    padding: 50px 20px;
+    padding: 100px 70px;
     text-align: center;
-    background: #000;
+    background: transparent;
 }
 
 #map {
+    background: transparent;
     height: 500px;
     max-width: 1200px;
     margin: 0 auto;
