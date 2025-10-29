@@ -101,7 +101,7 @@ body {
 }
 /* Cabeçalho - Menu Principal com Animação */
 header {
-    background: transparent; /* Cinza escuro para contraste */
+    background: transparent; 
     color: #fff;
     padding: 1rem 0;
     position: sticky;
@@ -131,34 +131,34 @@ nav {
     margin-left: 25px;
 }
 .nav-links a {
-    color: #fff; /* Cor padrão (branco) */
+    color: #fff; 
     text-decoration: none;
     font-weight: 500;
-    padding: 5px 10px; /* Espaçamento interno */
+    padding: 5px 10px; 
     animation: fadeInMenu 0.7s ease-in-out; /* Animação de fade-in ao carregar */
     transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
 }
 .nav-links a:hover {
-    color: #ff0000; /* Muda para vermelho no hover */
-    transform: scale(1.1); /* Zoom leve ao passar o mouse */
+    color: #ff0000; 
+    transform: scale(1.1); 
 }
 /* Animação de fade-in para o menu */
 @keyframes fadeInMenu {
     0% {
         opacity: 0;
-        transform: translateY(-10px); /* Começa um pouco acima */
+        transform: translateY(-10px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Volta à posição normal */
+        transform: translateY(0); 
     }
 }
 /* Seções */
 .section {
-    display: none; /* Oculta por padrão */
+    display: none; 
     padding: 50px 20px;
     text-align: center;
-    background: #000; /* Fundo preto */
+    background: trasnparent; 
     color: #fff;
 }
 /* Seção ativa (aberta) */
@@ -172,7 +172,7 @@ nav {
 }
 /* Mapa */
 .map-section {
-    padding: 50px 0; /* Ajustado para menos padding vertical em telas menores */
+    padding: 50px 0; 
     text-align: center;
     background: transparent;
 }
@@ -184,27 +184,26 @@ nav {
     margin: 0;
     border-radius: 8px;
     border: 1px solid #555;
-    position: relative; /* Para posicionamento do iframe */
-}
+    position: relative; 
 #map iframe {
     width: 100%;
     height: 100%;
     border: 0;
 }
 
-/* Wrapper para Tabelas Responsivas */
+
 .table-container {
     overflow-x: auto;
     margin: 20px 0;
 }
 
-/* Media Queries para Responsividade */
+
 @media (max-width: 480px) {
     body {
         font-size: 14px;
     }
     .section {
-        padding: 30px 10px; /* Reduz padding em mobiles */
+        padding: 30px 10px; 
     }
     nav {
         flex-direction: column;
@@ -218,10 +217,9 @@ nav {
         margin-bottom: 10px;
     }
     #map {
-        height: 300px; /* Reduz altura do mapa em telas pequenas */
-    }
+        height: 300px; 
     form {
-        gap: 8px; /* Menos espaço em forms */
+        gap: 8px; 
     }
     table {
         font-size: 0.8rem;
