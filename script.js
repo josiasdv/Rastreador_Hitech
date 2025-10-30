@@ -28,7 +28,7 @@ let dados = localStorage.getItem('dados') ? JSON.parse(localStorage.getItem('dad
     veiculos: [],
     motoristas: [],
     postos: [],
-    manutencoes: [] 
+    manutencoes: []
 };
 // Salvar dados
 function salvarDados() {
@@ -114,7 +114,7 @@ abastecimentoForm.addEventListener('submit', (e) => {
     const data = document.getElementById('data-abastecimento').value;
     const hora = document.getElementById('hora-abastecimento').value;
 
-    // Verificar duplicidade: mesmo placa, odometro e custo
+    // Verificar duplicidade: mesma placa, odometro e custo
     const duplicado = dados.abastecimentos.some(a => 
         a.placa === placa && a.odometro === odometro && a.custo === custo
     );
