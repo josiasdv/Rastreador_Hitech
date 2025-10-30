@@ -46,16 +46,11 @@
             <input type="number" id="litros" placeholder="Litros Abastecidos" step="0.01" required>
             <input type="number" id="odometro" placeholder="Odômetro (km)" required>
             <input type="number" id="custo" placeholder="Custo (R$)" step="0.01" required>
-            <input type="date" id="data-abastecimento" required> 
+            <input type="date" id="data-abastecimento" required>
             <input type="time" id="hora-abastecimento" required> 
             <button type="submit">Registrar Abastecimento</button>
         </form>
         <div class="table-container"> 
-            <div class="export-buttons">
-              <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
-              <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
-              <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
-            </div>
             <table id="tabela-abastecimentos">
                 <thead>
                     <tr>
@@ -69,6 +64,11 @@
                 </thead>
                 <tbody></tbody>
             </table>
+        </div>
+        <div class="export-buttons">
+         <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
+         <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
+         <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
         </div>
     </section>
     <!-- AGENDAMENTOS -->
@@ -104,7 +104,7 @@
             <input type="text" id="proprietario" placeholder="Proprietário" required>
             <button type="submit">Cadastrar Veículo</button>
         </form>
-        <div class="table-container"> 
+        <div class="table-container">
             <table id="tabela-veiculos">
                 <thead>
                     <tr>
@@ -173,15 +173,10 @@
             <input type="number" id="valor-pecas" placeholder="Valor Total das Peças (R$)" step="0.01" required>
             <input type="number" id="mao-de-obra" placeholder="Preço da Mão de Obra (R$)" step="0.01" required>
             <input type="date" id="data-manutencao" required>
-            <input type="time" id="hora-manutencao" required> 
+            <input type="time" id="hora-manutencao" required> <
             <button type="submit">Registrar Manutenção</button>
         </form>
-        <div class="export-buttons">
-          <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
-          <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
-          <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
-        </div>
-        <div class="table-container"> >
+        <div class="table-container"> 
             <table id="tabela-manutencoes">
                 <thead>
                     <tr>
@@ -197,6 +192,11 @@
                 </thead>
                 <tbody></tbody>
             </table>
+        </div>
+        <div class="export-buttons">
+            <button onclick="exportData('abastecimentos', 'csv')">Exportar CSV</button>
+            <button onclick="exportData('abastecimentos', 'xml')">Exportar XML</button>
+             <button onclick="exportData('abastecimentos', 'docx')">Exportar DOCX</button>
         </div>
     </section>
     <footer>
